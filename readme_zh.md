@@ -44,8 +44,6 @@ import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-ta
   - 组件名 'TableWraper' 改为 'TableWrapper';
 + [v1.1.1]
   - data属性内可以插入自定义组件
-+ [v1.2.1]
-  - borderWidth默认值从1改为0
 <br/><br/>
 
 ## Examples
@@ -121,7 +119,7 @@ export default class ExampleTwo extends Component {
     const state = this.state;
     return (
       <View style={styles.container}>
-        <Table borderStyle={{borderWidth: 1}}>
+        <Table>
           <Row data={state.tableHead} flexArr={[1, 2, 1, 1]} style={styles.head} textStyle={styles.text}/>
           <TableWrapper style={styles.wrapper}>
             <Col data={state.tableTitle} style={styles.title} heightArr={[28,28]} textStyle={styles.text}/>
@@ -177,11 +175,11 @@ export default class ExampleThree extends Component {
       <View style={styles.container}>
         <ScrollView horizontal={true}>
           <View>
-            <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
+            <Table borderStyle={{borderColor: '#C1C0B9'}}>
               <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={styles.text}/>
             </Table>
             <ScrollView style={styles.dataWrapper}>
-              <Table borderStyle={{borderWidth: 1, borderColor: '#C1C0B9'}}>
+              <Table borderStyle={{borderColor: '#C1C0B9'}}>
                 {
                   tableData.map((rowData, index) => (
                     <Row
@@ -319,7 +317,7 @@ export default class ExampleFive extends Component {
     const state = this.state;
     return (
       <View style={styles.container}>
-        <Table style={{flexDirection: 'row'}} borderStyle={{borderWidth: 1}}>
+        <Table style={{flexDirection: 'row'}}>
           {/* 左边模块 */}
           <TableWrapper style={{width: 80}}>
             <Cell data="" style={styles.singleHead}/>
@@ -362,7 +360,7 @@ const styles = StyleSheet.create({
 |---|---|---|---|
 | <b>data</b>       | Array | 组件数据 | `null` |
 | <b>style</b>      | Style | 组件style样式 | `null` |
-| <b>borderStyle</b>| Object| 表格边框样式 | `{ borderWidth: 0, borderColor: #000 }` |
+| <b>borderStyle</b>| Object| 表格边框样式 | `{ borderWidth: 1, borderColor: #000 }` |
 | <b>textStyle</b>  | Style | 子项文字样式 | `null` |
 | <b>flexArr</b>    | Array | 每列的flex值 | `[]` |
 | <b>widthArr</b>   | Array | 每列的宽度值 | `[]` |
